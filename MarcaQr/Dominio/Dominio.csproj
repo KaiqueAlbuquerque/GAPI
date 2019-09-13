@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40C795FB-8341-47EF-A0C6-C505FC0461F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dominio</RootNamespace>
+    <AssemblyName>Dominio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Persits.PDF, Version=3.4.0.33511, Culture=neutral, PublicKeyToken=b8d8c63f1ff142a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Persits.PDF.dll.3.4.0.33511\lib\netstandard2.0\Persits.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ObjVal\IDashboard.cs" />
+    <Compile Include="ObjVal\Arquivo.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Log.cs" />
+    <Compile Include="ObjVal\Dashboard.cs" />
+    <Compile Include="ObjVal\MarcaDAgua.cs" />
+    <Compile Include="ObjVal\QrCode.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Interfaces\Intermediadores\IIntermediadorBase.cs" />
+    <Compile Include="Interfaces\Intermediadores\IIntermediadorCliente.cs" />
+    <Compile Include="Interfaces\Intermediadores\IIntermediadorLog.cs" />
+    <Compile Include="Interfaces\Intermediadores\IIntermediadorUsuario.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioBase.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioCliente.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioLog.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioUsuario.cs" />
+    <Compile Include="Interfaces\ObjVal\IGeraArquivo.cs" />
+    <Compile Include="Intermediadores\IntermediadorBase.cs" />
+    <Compile Include="Intermediadores\IntermediadorCliente.cs" />
+    <Compile Include="Intermediadores\IntermediadorLog.cs" />
+    <Compile Include="Intermediadores\IntermediadorUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
